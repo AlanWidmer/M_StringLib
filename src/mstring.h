@@ -7,18 +7,20 @@
 
 #include <string.h>
 #include <stdbool.h>
+#include <stdint.h>
+#include "Problems.h"
 
 /* TODO: Assume for now that maximum string length is 65535. Later this should
  * be a compile variable.
  */
-typedef uint16_t mstrSize_t;
+typedef uint16_t mstrSize;
 
-typedef struct mstring {
-    char *;
-    mstrSize_t size;
-};
+typedef struct mstring_t {
+    char * string;
+    mstrSize size;
+} mstring;
 
-void mstrAssert(bool assertion);
-bool mstrInit(mstring newString, char * buffer, mstrSize_t newSize);
+#define mstrAssert(x) {LogProblem(bool x, __FILE__, __LINENO__);}
+bool mstrInit(mstring newString, char * buffer, mstrSize newSize);
 
 #endif /* MSTRING_H_ */

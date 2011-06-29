@@ -2,9 +2,10 @@
  * All of the functions that make up the mstring library
  *  @author Alan Widmer
  */
+#include "mstring.h"
 
 /**
- * Initializes the mstring with its size and buffer. This function initialises
+ * Initializes the mstring with its size and buffer. This function initializes
  * the string to a NULL string.
  * @param newString A string of type mstring that will have been initialized if
  * this function returns without error
@@ -16,7 +17,19 @@
  * @return True if the string initialized correctly, false if there was an
  * error during initialization.
  */
-bool mstrInit(mstring newString, char * buffer, mstrSize_t newSize)
+bool mstrInit(mstring newString, char * buffer, mstrSize newSize)
 {
-
+  bool successFlag = false;
+  if ((buffer != NULL) && (newSize != 0))
+  {
+    newString.string = buffer;
+    newString.size = newSize;
+    successFlag = true;
+  }
+  else
+    {
+      newString.size = 0;
+      // TODO LogProblem(NULL_POINTER);
+    }
+  return successFlag;
 }
