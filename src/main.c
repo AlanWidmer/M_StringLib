@@ -1,33 +1,16 @@
 /**
-*****************************************************************************
-**
-**  File        : main.c
-**
-**  Abstract    : main function.
-**
-**  Functions   : main
-**
-**  Environment : Atollic TrueSTUDIO/STM32
-**                STMicroelectronics STM32F10x Standard Peripherals Library
-**
-**  Distribution: The file is distributed “as is,” without any warranty
-**                of any kind.
-**
-**  (c)Copyright Atollic AB.
-**  You may use this file as-is or modify it according to the needs of your
-**  project. Distribution of this file (unmodified or modified) is not
-**  permitted. Atollic AB permit registered Atollic TrueSTUDIO(R) users the
-**  rights to distribute the assembled, compiled & linked contents of this
-**  file as part of an application binary file, provided that it is built
-**  using the Atollic TrueSTUDIO(R) toolchain.
-**
-**
-*****************************************************************************
-*/
+ * @file
+ *
+ * This is the main file, which is included only as an example of library usage.
+ *
+ * @author Alan Widmer
+ */
+
 
 /* Includes */
 #include <stddef.h>
 #include "stm32f10x.h"
+#include "mstring.h"
 
 #ifdef USE_STM3210B_EVAL
  #include "stm32_eval.h"
@@ -108,13 +91,12 @@
 /* Private function prototypes */
 /* Private functions */
 
-/**
-**===========================================================================
-**
-**  Abstract: main program
-**
-**===========================================================================
-*/
+  /* TODO - Add your application code here */
+  /**
+   * Main function calls a series of test cases to show how the functions are used.
+   * It assumes the the string.h printf( ) function will display text on the host machine in the IDE or debugger
+   *
+   */
 int main(void)
 {
   int i = 0;
@@ -185,7 +167,14 @@ int main(void)
   STM_EVAL_COMInit(COM1, &USART_InitStructure);
 #endif
 
-  /* TODO - Add your application code here */
+  /* Declare a few strings */
+  mstring newString;
+  char * aBuf[A_SIZE];
+  if !mstrInit(mstring newString, char * buffer, mstrSize_t newSize);
+  {
+      mstrAssert(false);
+  }
+
 
   /* Infinite loop */
   while (1)
