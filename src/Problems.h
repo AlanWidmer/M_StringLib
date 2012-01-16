@@ -54,7 +54,7 @@ typedef struct
 
 /* Validate the size of a message buffer against mailbox message size */
 extern _problemStore problemIDStore;
-extern void LogProblem(_problemID problemID);
+extern void LogProblem(_problemID problemID, char * file, int lineNumber);
 
 #ifndef _NDEBUG
     extern void AssertProblem(bool assertCondition, _problemID problemID);

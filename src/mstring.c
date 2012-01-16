@@ -17,7 +17,7 @@
  * @return True if the string initialized correctly, false if there was an
  * error during initialization.
  */
-bool mstrInit(mstring * newString, const char const * buffer, const mstrSize_t newSize)
+bool mstrInit(mstring * newString, char * buffer, const mstrSize_t newSize)
 {
     bool initSuccess = true;
     if (buffer == NULL)
@@ -47,8 +47,8 @@ bool mstrInit(mstring * newString, const char const * buffer, const mstrSize_t n
 bool mstrSet(mstring *mdest, const char *msrc)
 {
     bool success, terminated=false;
-    mstrSize_t i;
-    while ((i<mdest->size) && !terminated)
+    mstrSize_t i =0;
+    while ((i < mdest->size) && !terminated)
     {
         if(msrc[i]==0)
         {
@@ -124,20 +124,4 @@ mstrSize_t mstrLen(const mstring const * msrc)
     }
     length = i;
     return length;
-}
-
-
-/**
- *
- * @param assertion
- */
-void mstrAssert(bool assertion)
-{
-    if (!assertion)
-    {
-        for (int i = 0;1;)
-        {
-
-        }
-    }
 }

@@ -24,7 +24,7 @@ _problemStore problemIDStore; /* Deliberately not initialized */
  * compiled out of final customer code and just used during development on some
  * projects.
  */
-void LogProblem(_problemID problemID)
+void LogProblem(_problemID problemID, char * file, int lineNumber)
 {
     problemIDStore.ID = problemID;
     // TODO ESTOP0;

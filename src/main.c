@@ -168,9 +168,10 @@ int main(void)
 #endif
 
   /* Declare a few strings */
+#define A_SIZE 10
   mstring newString;
   char * aBuf[A_SIZE];
-  if !mstrInit(mstring newString, char * buffer, mstrSize_t newSize);
+  if (!mstrInit(&newString, aBuf, A_SIZE))
   {
       mstrAssert(false);
   }

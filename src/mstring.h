@@ -17,15 +17,14 @@
 typedef uint16_t mstrSize_t;
 
 
-#define mstrAssert(x) {LogProblem(bool x, __FILE__, __LINENO__);}
-bool mstrInit(mstring newString, char * buffer, mstrSize newSize);
+#define mstrAssert(x) {LogProblem(x, __FILE__, __LINE__);}
 
 typedef struct managedString {
     char * string;
     mstrSize_t size;
 } mstring;
 
-bool mstrInit(mstring newString, char * buffer, mstrSize_t newSize);
+bool mstrInit(mstring * newString, char * buffer, const mstrSize_t newSize);
 bool mstrSet(mstring *mdest, const char *msrc);
 mstrSize_t mstrLen(const mstring const * msrc);
 bool mstrcpy(mstring, const mstring);
