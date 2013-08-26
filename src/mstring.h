@@ -24,9 +24,10 @@ typedef struct managedString {
     mstrSize_t size;
 } mstring;
 
-bool mstrInit(mstring * newString, char * buffer, const mstrSize_t newSize);
-bool mstrSet(mstring *mdest, const char *msrc);
-mstrSize_t mstrLen(const mstring const * msrc);
-bool mstrcpy(mstring, const mstring);
+extern bool mstrInit(mstring * newString, char * buffer, const mstrSize_t newSize);
+extern bool mstrSet(mstring *mdest, const char *msrc);
+extern mstrSize_t mstrLen(const mstring const * msrc);
+extern bool mstrCpy(mstring *, const mstring *);
+
 
 #endif /* MSTRING_H_ */
