@@ -12,6 +12,7 @@ This puts restrictions on dynamic memory allocations so unlike most modern strin
 The basic string type is not simply a `char *`, it is a `struct` that contains a pointer to the character buffer and the size of the buffer. The buffer will still be zero terminated so that the string.h functions can be used once the overrun conditions have been checked. This keeps the library code small and uses the optimized string.h functions to do the compute intensive work.
 
 The full string library that I intend to implement is:
+
     _PTR     memchr(const _PTR, int, size_t)
     int      memcmp(const _PTR, const _PTR, size_t)
     _PTR     memcpy(_PTR, const _PTR, size_t)
