@@ -13,11 +13,11 @@ The basic string type is not simply a `char *`, it is a `struct` that contains a
 
 The full string library that I intend to implement is:
 
-    _PTR     memchr(const _PTR, int, size_t)
-    int      memcmp(const _PTR, const _PTR, size_t)
-    _PTR     memcpy(_PTR, const _PTR, size_t)
-    _PTR     memmove(_PTR, const _PTR, size_t)
-    _PTR     memset(_PTR, int, size_t)
+    _PTR    memchr(const _PTR, int, size_t)
+    int     memcmp(const _PTR, const _PTR, size_t)
+    _PTR    memcpy(_PTR, const _PTR, size_t)
+    _PTR    memmove(_PTR, const _PTR, size_t)
+    _PTR    memset(_PTR, int, size_t)
     char *  strcat(char *, const char *)
     char *  strchr(const char *, int)
     int     strcmp(const char *, const char *)
@@ -33,5 +33,16 @@ The full string library that I intend to implement is:
     char *  strrchr(const char *, int)
     size_t  strspn(const char *, const char *)
     char *  strstr(const char *, const char *)
+            printf?
+            sprintf?
+            itoa
+            atoi
+            scanf
+            tok
 
+TODO
+----
+Figure out how to handle errors. ASSERT? global error 'object'. What does MISRA suggest?
+
+            
 Alan Widmer 
