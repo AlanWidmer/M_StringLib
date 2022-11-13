@@ -1,6 +1,6 @@
 /** @file
  * All of the functions that make up the marray library
- * @copyright 2014 Product Creation Studio, Inc.
+ * @copyright Alan Widmer
  * All Rights Reserved
  * @author Alan Widmer
  */
@@ -10,13 +10,13 @@
 
 /**
  * Initializes the marray with its size and buffer. This function initializes
- * the string to a NULL string.
+ * the array to an empty array.
  * @param newArray A array of type marray that will have been initialized if
  * this function returns without error
  * @param buffer The buffer that will hold the contents of the u8 array.
  * @param newSize The size of the buffer allocated by the calling function to
  * hold the array.
- * @return True if the string initialized correctly, false if there was an
+ * @return True if the array initialized correctly, false if there was an
  * error during initialization.
  */
 bool marrayU8Init(marray_u8 * newArray, uint8_t * const buffer,
@@ -36,7 +36,7 @@ bool marrayU8Init(marray_u8 * newArray, uint8_t * const buffer,
 
 
 /**
- * Sets the destination marray to be a copy of the source string. The source
+ * Sets the destination marray to be a copy of the source array. The source
  * is a buffer containing a uint8 array. This is useful for
  * setting the marray to an array constant.
  * @param mdest
@@ -143,10 +143,10 @@ bool marrayU8CatLiteral(marray_u8 *mdest, const uint8_t *msrc) {
  * @param array1 The first array
  * @param array2 The second array
  * @return <0 the first value that does not match has a lower value in array1 than in array2
- *         0 the contents of both strings are equal
- *         >0 the first character that does not match has a greater value in str1 than in str2
+ *         0 the contents of both arrays are equal
+ *         >0 the first character that does not match has a greater value in array1 than in array2
  */
-int16_t marrayU8Cmp(const marray_u8 * str1, const marray_u8 * str2) {
-  return (strncmp(str1->array, str2->array, MIN(str1->length, str2->length)));
+int16_t marrayU8Cmp(const marray_u8 * array1, const marray_u8 * array2) {
+  return (memcmp(array1->array, array2->array, MIN(array1->length, array2->length)));
 }
 

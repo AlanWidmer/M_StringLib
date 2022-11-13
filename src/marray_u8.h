@@ -34,11 +34,11 @@ typedef struct managed_array_u8 {
     marray_size_t length;
 } marray_u8;
 
-extern bool marrayU8Init(marray_u8 * newString, uint8_t * const buffer, const marray_size_t newSize);
+extern bool marrayU8Init(marray_u8 * newarray, uint8_t * const buffer, const marray_size_t newSize);
 extern bool marrayU8Set(marray_u8 *mdest, uint8_t * const msrc, marray_size_t src_length);
 extern marray_size_t marrayU8Len(const marray_u8 const * msrc);
 extern bool marrayU8Cpy(marray_u8 * dest, const marray_u8 * src);
-extern int16_t marrayU8Cmp(const marray_u8 * str1, const marray_u8 * str2);
+extern int16_t marrayU8Cmp(const marray_u8 * array1, const marray_u8 * array2);
 extern bool marrayU8CatLiteral(marray_u8 *mdest, const uint8_t *msrc);
 
 #endif /* MARRAY_H_ */
